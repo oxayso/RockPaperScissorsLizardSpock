@@ -26,47 +26,36 @@ namespace RockPaperScissors
         {
             Console.WriteLine("Choose any weapon of your choice! Enter a letter that corresponds: \nA.) Rock \nB.) Paper \nC.) Scissors \nD.) Lizard \nE.) Spock");
             string choice = Console.ReadLine().ToUpper();
-            return choice;
-
-        }
-
-        public void PrintHumanChoice(string choice)
-        {
-
             switch (choice)
             {
                 case "A":
                     Console.WriteLine("Rock");
-                    //playerOne = new Human();
-                    //playerTwo = new Human();
+                    choice = "Rock";
                     break;
                 case "B":
                     Console.WriteLine("Paper");
-                    //playerOne = new Human();
-                    //playerTwo = new Human();
+                    choice = "Paper";
                     break;
                 case "C":
                     Console.WriteLine("Scissors");
-                    //playerOne = new Human();
-                    //playerTwo = new Human();
+                    choice = "Scissors";
                     break;
                 case "D":
                     Console.WriteLine("Lizard");
-                    //playerOne = new Human();
-                    //playerTwo = new Human();
+                    choice = "Lizard";
                     break;
                 case "E":
                     Console.WriteLine("Spock");
-                    //playerOne = new Human();
-                    //playerTwo = new Human();
+                    choice = "Spock";
                     Console.ReadLine();
                     break;
                 default:
+                    Console.WriteLine("***INVALID INPUT. PLEASE TRY AGAIN.***");
+                    GetHumanChoice();
                     break;
-
             }
-
-        }
+            return choice;
+        }       
 
     }
 

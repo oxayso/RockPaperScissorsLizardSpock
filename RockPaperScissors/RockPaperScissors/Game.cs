@@ -51,16 +51,23 @@ namespace RockPaperScissors
             Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
         }
 
+        //public string DetermineWinner()
+        //{
+        //    for (d = (5 + a - b) % 5)
+        //    {
+        //        if (d = 1 || decimal = 3 => a)
+        //    {
+        //        Console.WriteLine("WIN");
+        //    }
+        //    }
+                 
+        //}
+
+
         //public int GetComputerChoice()
         //{
 
         //}
-
-        //public void DetermineWinner()
-        //{
-
-        //}
-
         public void RunGame()
         {
             DisplayRules();
@@ -72,14 +79,8 @@ namespace RockPaperScissors
             playerOne.PrintPlayerName();
             playerTwo.PrintPlayerName();
             playerOne.GetHumanChoice();
-            playerTwo.GetHumanChoice();
-            //string choice = PrintHumanChoice();
-            //playerOne.PrintHumanChoice();
-            //playerTwo.PrintHumanChoice();
-
+            playerTwo.GetHumanChoice();           
         }
-
-
     }
 }
 

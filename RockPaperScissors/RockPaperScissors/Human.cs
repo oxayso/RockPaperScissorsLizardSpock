@@ -9,5 +9,6 @@ namespace RockPaperScissors
     public class Human : Player
     {
 
+
     }
 }
