@@ -12,5 +12,6 @@ namespace RockPaperScissors
         {
             name = "A.I Uzumaki";
         }
+
     }
 }

@@ -17,7 +17,7 @@ namespace RockPaperScissors
 
         public void PrintPlayerName()
         {
-            Console.WriteLine($"{name}, get ready to defeat your opponent!\n");
+            Console.WriteLine($"\n{name}, get ready to defeat your opponent!\n");
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
 
         }
@@ -29,28 +29,28 @@ namespace RockPaperScissors
             switch (choice)
             {
                 case "A":
-                    Console.WriteLine("Rock");
+                    Console.WriteLine("\nWeapon Selection = Rock\n");
                     choice = "Rock";
                     break;
                 case "B":
-                    Console.WriteLine("Paper");
+                    Console.WriteLine("\nWeapon Selection = Paper\n");
                     choice = "Paper";
                     break;
                 case "C":
-                    Console.WriteLine("Scissors");
+                    Console.WriteLine("\nWeapon Selection = Scissors\n");
                     choice = "Scissors";
                     break;
                 case "D":
-                    Console.WriteLine("Lizard");
+                    Console.WriteLine("\nWeapon Selection = Lizard\n");
                     choice = "Lizard";
                     break;
                 case "E":
-                    Console.WriteLine("Spock");
+                    Console.WriteLine("\nWeapon Selection = Spock\n");
                     choice = "Spock";
                     Console.ReadLine();
                     break;
                 default:
-                    Console.WriteLine("***INVALID INPUT. PLEASE TRY AGAIN.***");
+                    Console.WriteLine("\n*** INVALID INPUT. PLEASE TRY AGAIN. ***\n");
                     GetHumanChoice();
                     break;
             }

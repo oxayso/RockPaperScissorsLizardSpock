@@ -10,10 +10,7 @@ namespace RockPaperScissors
     {
         public Player playerOne;
         public Player playerTwo;
-        public Game()
-        {
-
-        }
+       
         public void DisplayRules()
         {
             Console.WriteLine("Let's play a classic: Rock, Paper, Scissors. \n\nUnder one condition... \n-The game has since expanded & thus, has developed a new name: Rock, Paper, Scissors, Lizard, Spock... \n\nTHE RULES: \n\n-Scissors cuts Paper \n-Paper covers Rock \n-Rock crushes Lizard \n-Lizard poisons Spock \n-Spock smashes Scissors \n-Scissors decapitates Lizard \n-Lizard eats Paper \n-Paper disproves Spock \n-Spock vaporizes Rock \n(and as it always has...) \n-Rock crushes Scissors\n \n\nLET'S GO!\n\n");
@@ -40,8 +37,11 @@ namespace RockPaperScissors
                     Console.WriteLine("\nLet's. Get. Ready. To... RUMBLE!");
                     playerOne = new Human();
                     playerTwo = new Human();
+                    Console.ReadLine();
                     break;
                 default:
+                    Console.WriteLine("\n*** INVALID INPUT. PLEASE TRY AGAIN. ***\n");
+                    PlayerMode();
                     break;
             }
         }
@@ -51,23 +51,24 @@ namespace RockPaperScissors
             Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
         }
 
-        //public string DetermineWinner()
-        //{
-        //    for (d = (5 + a - b) % 5)
-        //    {
-        //        if (d = 1 || decimal = 3 => a)
-        //    {
-        //        Console.WriteLine("WIN");
-        //    }
-        //    }
-                 
-        //}
+
+        public void DetermineWinner()
+        {
+            Console.WriteLine("\nWINNER =\n");
+            Console.WriteLine("\nLOSER =\n");
+        }
 
 
-        //public int GetComputerChoice()
-        //{
+        public string GetAIChoice()
+        {
+            {
+                String[] weapons = { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
+                Random random = new Random();
+                int index = random.Next(0, weapons.Length);
+                return (weapons[index]);
+            }
+        }
 
-        //}
         public void RunGame()
         {
             DisplayRules();
@@ -79,7 +80,10 @@ namespace RockPaperScissors
             playerOne.PrintPlayerName();
             playerTwo.PrintPlayerName();
             playerOne.GetHumanChoice();
-            playerTwo.GetHumanChoice();           
+            playerTwo.GetHumanChoice();
+            DetermineWinner();
+            string weapon = GetAIChoice();
+            //string choice = choiceToWeaponName();                     
         }
     }
 }
