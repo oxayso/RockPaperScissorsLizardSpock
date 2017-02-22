@@ -52,22 +52,56 @@ namespace RockPaperScissors
         }
 
 
-        public void DetermineWinner()
+        public bool DetermineWinner(string playerOne, string playerTwo)
         {
-            Console.WriteLine("\nWINNER =\n");
-            Console.WriteLine("\nLOSER =\n");
-        }
-
-
-        public string GetAIChoice()
-        {
+            if (playerOne == "rock" && (playerTwo == "scissors" || playerTwo == "lizard"))
             {
-                String[] weapons = { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
-                Random random = new Random();
-                int index = random.Next(0, weapons.Length);
-                return (weapons[index]);
+                return true;
+            }
+            else if (playerOne == "paper" && (playerTwo == "rock" || playerTwo == "spock"))
+            {
+                return true;
+            }
+            if (playerOne == "scissors" && (playerTwo == "lizard" || playerTwo == "paper"))
+            {
+                return true;
+            }
+            else if (playerOne == "lizard" && (playerTwo == "spock" || playerTwo == "paper"))
+            {
+                return true;
+            }
+            if (playerOne == "spock" && (playerTwo == "scissors" || playerTwo == "rock"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
+
+        public void DisplayWinner(bool playerOneWins)
+        {
+            Console.WriteLine($"\n\n{playerOne.name}'s, weapon is {playerOne.weapon}!!!!");
+            Console.WriteLine($"\n{playerTwo.name}'s, weapon is {playerTwo.weapon}!!!!");
+
+
+            if (playerOneWins)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.WriteLine($"\naaaaand the winner is: {playerOne.name} !!!!!");
+                Console.ResetColor();
+
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.WriteLine($"\naaaaand the winner is: {playerTwo.name} !!!!!");
+                Console.ResetColor();
+            }
+        }
+
+
 
         public void RunGame()
         {
@@ -75,15 +109,18 @@ namespace RockPaperScissors
             string opponent = PlayerMode();
             PlayerChoice(opponent);
             DisplayBreakPoint();
-            playerOne.GetPlayerName();
-            playerTwo.GetPlayerName();
+            playerOne.SetPlayerName();
+            playerTwo.SetPlayerName();
             playerOne.PrintPlayerName();
             playerTwo.PrintPlayerName();
-            playerOne.GetHumanChoice();
-            playerTwo.GetHumanChoice();
-            DetermineWinner();
-            string weapon = GetAIChoice();
-            //string choice = choiceToWeaponName();                     
+            playerOne.SetChoice();
+            playerTwo.SetChoice();           
+            DisplayWinner(DetermineWinner(playerOne.weapon, playerTwo.weapon));
+            Console.WriteLine("\n\nWOULD YOU LIKE TO PLAY AGAIN?!?!?!? \n[Y] YES! \n[N] NO!");
+            if ("y" == Console.ReadLine().ToLower())
+            {
+                RunGame();
+            }
         }
     }
 }

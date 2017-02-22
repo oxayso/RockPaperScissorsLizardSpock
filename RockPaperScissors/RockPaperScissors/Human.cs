@@ -9,6 +9,15 @@ namespace RockPaperScissors
     public class Human : Player
     {
 
-
+        public override void SetChoice()
+        {
+            Console.WriteLine("Choose any weapon of your choice! Type a weapon of your choice: ROCK, PAPER, SCISSORS, LIZARD OR SPOCK.");
+            this.weapon = Console.ReadLine().ToLower();
+            //Console.WriteLine($"Your Weapon = ");           
+        }
+        public override string GetChoice()
+        {
+            return this.weapon;
+        }
     }
 }

@@ -9,7 +9,9 @@ namespace RockPaperScissors
     public class Player
     {
         public string name;
-        public virtual void GetPlayerName()
+        public string weapon;
+
+        public virtual void SetPlayerName()
         {
             Console.WriteLine("Please enter your Name:");
             name = Console.ReadLine();
@@ -17,45 +19,19 @@ namespace RockPaperScissors
 
         public void PrintPlayerName()
         {
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine($"\n{name}, get ready to defeat your opponent!\n");
+            Console.ResetColor();
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
 
         }
 
-        public string GetHumanChoice()
+        public virtual void SetChoice()
         {
-            Console.WriteLine("Choose any weapon of your choice! Enter a letter that corresponds: \nA.) Rock \nB.) Paper \nC.) Scissors \nD.) Lizard \nE.) Spock");
-            string choice = Console.ReadLine().ToUpper();
-            switch (choice)
-            {
-                case "A":
-                    Console.WriteLine("\nWeapon Selection = Rock\n");
-                    choice = "Rock";
-                    break;
-                case "B":
-                    Console.WriteLine("\nWeapon Selection = Paper\n");
-                    choice = "Paper";
-                    break;
-                case "C":
-                    Console.WriteLine("\nWeapon Selection = Scissors\n");
-                    choice = "Scissors";
-                    break;
-                case "D":
-                    Console.WriteLine("\nWeapon Selection = Lizard\n");
-                    choice = "Lizard";
-                    break;
-                case "E":
-                    Console.WriteLine("\nWeapon Selection = Spock\n");
-                    choice = "Spock";
-                    Console.ReadLine();
-                    break;
-                default:
-                    Console.WriteLine("\n*** INVALID INPUT. PLEASE TRY AGAIN. ***\n");
-                    GetHumanChoice();
-                    break;
-            }
-            return choice;
-        }       
+        }
+        public virtual string GetChoice() {
+            return "";
+        }
 
     }
 

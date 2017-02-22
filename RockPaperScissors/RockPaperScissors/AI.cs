@@ -8,9 +8,18 @@ namespace RockPaperScissors
 {
     public class AI : Player 
     {
-        public override void GetPlayerName()
+        public override void SetPlayerName()
         {
             name = "A.I Uzumaki";
+        }
+
+        public override void SetChoice()
+        {
+            {
+                Random random = new Random();
+                String[] weapons = { "rock", "paper", "scissors", "lizard", "spock" };
+                this.weapon = weapons[random.Next(0, weapons.Length)];
+            }
         }
 
     }

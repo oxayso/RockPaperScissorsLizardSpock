@@ -1,0 +1,9 @@
+- Right now the game only gets to the point where you can make a choice.  It doesn't let you play multiple rounds or decide who wins.
+
+-  Good job breaking things up into separate functions
+
+-  Instead of having GetAIChoice() and GetHumanChoice() if the player has a GetChoice() the children can override it and when a round is going you caan always just call player1.GetChoice() and player2.GetChoice() and you don't have to worry about whether or not player2 is AI or Human.
+
+-  Good Job overriding the GetPlayerName() for the AI.
+
+75/100
