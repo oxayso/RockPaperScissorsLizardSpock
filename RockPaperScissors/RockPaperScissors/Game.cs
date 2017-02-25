@@ -81,10 +81,9 @@ namespace RockPaperScissors
         }
 
         public void DisplayWinner(bool playerOneWins)
-        {
-            Console.WriteLine($"\n\n{playerOne.name}'s, weapon is {playerOne.weapon}!!!!");
-            Console.WriteLine($"\n{playerTwo.name}'s, weapon is {playerTwo.weapon}!!!!");
-
+            {
+        //    Console.WriteLine($"\n\n{playerOne.name}'s, weapon is {playerOne.weapon}!!!!");
+        //    Console.WriteLine($"\n{playerTwo.name}'s, weapon is {playerTwo.weapon}!!!!");
 
             if (playerOneWins)
             {
@@ -114,13 +113,23 @@ namespace RockPaperScissors
             playerOne.PrintPlayerName();
             playerTwo.PrintPlayerName();
             playerOne.SetChoice();
-            playerTwo.SetChoice();           
-            DisplayWinner(DetermineWinner(playerOne.weapon, playerTwo.weapon));
+            playerTwo.SetChoice();  
+            if (playerOne.weapon == playerTwo.weapon)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.WriteLine("\nTHIS GAME HAS ENDED IN A Tie !!!!!");
+                Console.ResetColor();
+            }
+            else
+            {
+                DisplayWinner(DetermineWinner(playerOne.weapon, playerTwo.weapon));
+            }
             Console.WriteLine("\n\nWOULD YOU LIKE TO PLAY AGAIN?!?!?!? \n[Y] YES! \n[N] NO!");
             if ("y" == Console.ReadLine().ToLower())
             {
                 RunGame();
             }
+
         }
     }
 }

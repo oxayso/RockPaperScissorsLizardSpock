@@ -19,6 +19,7 @@ namespace RockPaperScissors
                 Random random = new Random();
                 String[] weapons = { "rock", "paper", "scissors", "lizard", "spock" };
                 this.weapon = weapons[random.Next(0, weapons.Length)];
+                Console.Clear();
             }
         }
 
