@@ -11,7 +11,7 @@ namespace RockPaperScissors
 
         public override void SetChoice()
         {
-            Console.WriteLine("Choose any weapon of your choice! Type a weapon of your choice: ROCK, PAPER, SCISSORS, LIZARD OR SPOCK.");
+            Console.WriteLine("Type a weapon of your choice: ROCK, PAPER, SCISSORS, LIZARD OR SPOCK.");
             this.weapon = Console.ReadLine().ToLower();
             Console.Clear();
         }

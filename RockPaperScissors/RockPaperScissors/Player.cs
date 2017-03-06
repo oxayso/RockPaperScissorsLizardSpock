@@ -22,9 +22,10 @@ namespace RockPaperScissors
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine($"\n{name}, get ready to defeat your opponent!\n");
             Console.ResetColor();
-            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
 
         }
+
 
         public virtual void SetChoice()
         {
